@@ -1,4 +1,4 @@
-let score = ''
+let score = '34'
 // score = '35rt'
 // score = null;
 // score = undefined;
@@ -46,3 +46,13 @@ let isLoggedIn = 1;
 let booleanLoggedIn = Boolean(isLoggedIn);
 console.log(typeof booleanLoggedIn); // boolean
 console.log(booleanLoggedIn); // true
+
+isLoggedIn = "Manisha"
+console.log(booleanLoggedIn) // true
+
+
+
+let someNumber = 67;
+let someString = String(someNumber)
+console.log(someString); // 67
+console.log(typeof someString) // string
