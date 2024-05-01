@@ -59,3 +59,45 @@ console.log(url.includes("www")); //true
 const projectName = "My-New-JS-Project"
 console.log(projectName.split('-')); // ['my' , 'new', 'js, 'project']
 
+//===================================== Some Important String Methods ====================================================
+
+// Extracting String Characters
+        // i - at(position) method
+        // ii - charAt(position) method
+        // iii - charCodeAt(position) method
+        // iv - using property access []
+
+/*
+1. String.prototype.at() -- The index (position) of the string character to be returned.
+                            The at() method returns an indexed element from a string:
+                            This method allows for positive and negative integers. Negative integers count back from 
+                            the last string character. (ES2022)
+*/
+const sentence = 'The quick brown fox jumps over the lazy dog.'
+console.log(`${sentence.at(5)}`); // u
+console.log(`${sentence.at(-6)}`); // y
+console.log(`${sentence.length}`); // 44
+
+
+/*
+2. String.prototype.charAt() -- The charAt() method returns the character at a specified index (position) in a string:
+                                at() method allows the use of negative indexes while charAt() do not.
+                                Now you can use myString.at(-2) instead of charAt(myString.length-2).
+*/
+
+let text = 'Hello world';
+console.log(`${text.charAt(1)}`) // e
+
+/*
+3. String.prototype.charCodeAt() -- It returns the code of the character at a specified index in a string:
+                                    The method returns a UTF-16 code (an integer between 0 and 65535).
+
+*/
+
+console.log(`${text.charCodeAt(2)}`); // 108
+
+/*
+4. Property Access [ ] -- Property access on strings:
+
+*/
+console.log(`${text[0]}`); // H
