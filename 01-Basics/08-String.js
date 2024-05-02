@@ -314,3 +314,104 @@ A string can be converted to an array with the split() method:
 
 
 */
+
+
+const splitStr = 'A brown fox';
+let splitArr = (splitStr.split(' ')); 
+console.log(splitArr) // ['A','brown','fox']
+console.log(`${splitArr[2]}`); // fox
+
+const myString = "Hello World. How are you doing?";
+const splits = myString.split(" ", 3);
+console.log(splits); // [ "Hello", "World.", "How" ]
+
+
+
+// ================================================= INCLUDE ======================================
+
+/*
+
+The includes() method of String values performs a case-sensitive search to determine whether a given string may 
+be found within this string, returning true or false as appropriate.
+
+
+*/
+
+
+const includeStr = "To be, or not to be, that is the question.";
+console.log(includeStr.includes('to be')); //true
+
+const sentence1 = 'The quick brown fox jumps over the lazy dog.';
+const word1 = 'fox';
+console.log(`The word "${word1}" ${sentence1.includes(word1) ? 'is' : 'is not'} in the sentence1`);
+
+
+//================================================== JavaScript String Search =============================================
+
+/*
+
+1.  indexOf() - The indexOf() method returns the index (position) of the first occurrence of a string in a string,
+                or it returns -1 if the string is not found:
+
+*/
+
+let text5= "Please locate where 'locate' occurs!";
+console.log(text5.indexOf("locate")); // 7
+
+/*
+
+2.  lastIndexOf() - The lastIndexOf() method returns the index of the last occurrence of a specified text in a string:
+
+                Both indexOf(), and lastIndexOf() return -1 if the text is not found:
+                Both methods accept a second parameter as the starting position for the search:
+*/
+
+let text6 = "Please locate where 'locate' occurs!";
+console.log(`${text6.lastIndexOf('locate')}`); //21
+
+
+/*
+3. The search() method searches a string for a string (or a regular expression) and returns the position of the match:
+        The search() method returns the position of the first occurrence of a string in a string.
+
+        The search() method cannot take a second start position argument.
+        The indexOf() method cannot take powerful search values (regular expressions).
+
+*/
+
+console.log(`${text6.search('locate')}`); // 7
+console.log(`${text6.search(/[A-Z]/)}`); // 0 -- P
+
+
+/*
+
+4. The match() method returns an array containing the results of matching a string against a string (or a regular expression).
+        match() will return only the first match in the string.
+*/
+
+const matchStr = 'A Quick Brown Fox';
+console.log(matchStr.match(/[A-Z]/)); // ['A']
+console.log(matchStr.match(/[A-Z]/g)); // ['A', 'Q', 'B', 'F']
+console.log(matchStr.match(/[A-Z]/g)[2]); // B
+
+
+/*
+
+5. The matchAll() method returns an iterator containing the results of matching a string against a 
+                  string (or a regular expression).
+
+*/
+
+let text7 = "I love cats. Cats are very easy to love. Cats are very popular."
+console.log(text7.matchAll("Cats"))
+
+
+/*
+6. The includes() method returns true if a string contains a specified value.
+        Otherwise it returns false.
+
+*/
+
+let text8 = "Hello world, welcome to the universe.";
+console.log(text8.includes("world")); // true
+console.log(text8.includes("world", 12)); // false
