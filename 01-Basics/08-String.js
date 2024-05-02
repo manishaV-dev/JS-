@@ -205,5 +205,112 @@ console.log(`${withWhiteSpace.trim()}`); // Hello
 /*
 
 1. padStart() - The padStart() method pads a string from the start.
+                It pads a string with another string (multiple times) until it reaches a given length.
+
+
+                syntax - padStart(targetLength)
+                         padStart(targetLength, padString)
+
+                Note:   The padStart() method is a string method.
+                        To pad a number, convert the number to a string first.
+*/
+
+let padStr = '4'
+console.log(`${padStr.padStart(2)}`); //  4 (with Space from start)
+console.log(`${padStr.padStart(3,0)}`); // 004
+
+let newPad = 5;
+console.log(`${newPad.toString().padStart(4, 1)}`); 1115
+
+/*
+
+1. padStart() - The padEnd() method pads a string from the end.
+                It pads a string with another string (multiple times) until it reaches a given length.
+
+
+                syntax -    padEnd(targetLength)
+                            padEnd(targetLength, padString)
+
+                Note:   The padStart() method is a string method.
+                        To pad a number, convert the number to a string first.
+*/
+
+console.log(`${padStr.padEnd(3,0)}`); //400
+
+
+// ======================================= JavaScript REPEAT =====================================
+
+/*
+The repeat() method returns a string with a number of copies of a string.
+        The repeat() method returns a new string.
+        The repeat() method does not change the original string.
+        Not support -ve value
+
+        syntax - repeat(count)
+
+*/
+
+let repeatStr = "Hello!"
+console.log(`${repeatStr.repeat(4)} world`) ; // Hello!Hello!Hello!Hello! world
+
+
+// ======================================= JavaScript Replace =====================================
+
+/*
+
+The replace() method replaces a specified value with another value in a string:
+
+                Syntax -- replace(pattern, replacement)
+
+        Note:   The replace() method does not change the string it is called on.
+                The replace() method returns a new string.
+                The replace() method replaces only the first match.
+                If you want to replace all matches, use a regular expression with the /g flag set. 
+                replace() method is case sensitive. 
+
+*/
+
+let replaceStr = "Please visit Zudio!"
+console.log(`${replaceStr.replace('Zudio', 'Zara')}`); // Please visit Zara
+
+//By default, the replace() method replaces only the first match: 
+let firstMatch = 'Please visit Zara and Zara!'
+console.log(`${firstMatch.replace('Zara', 'Zudio')}`); // Please visit Zudio and Zara
+
+// To replace case insensitive, use a regular expression with an /i flag (insensitive):
+let caseStr = "Please visit Microsoft!";
+console.log(`${caseStr.replace('MICROSOFT', 'Google')}`); // Please visit Microsoft
+console.log(`${caseStr.replace(/MICROSOFT/i, "Google")}`); // Please Visit Google
+
+// To replace all matches, use a regular expression with a /g flag (global match):
+console.log(`${firstMatch.replace(/Zara/g , 'Zudio')}`); // // Please visit Zudio and Zudio
+
+
+/*
+
+The replaceAll() method of String values returns a new string with all matches of a pattern replaced by a replacement. 
+
+                Syntax -- replaceAll(pattern, replacement)
+
+        Note:   replaceAll() is an ES2021 feature.
+                Thrown typeError if the pattern is a regex that does not have the global (g) flag 
+                The replace() method replaces only the first match.
+
+*/
+
+const paragraph = "I think Ruth's dog is cuter than your dog!";
+console.log(`${paragraph.replaceAll('dog', 'cat')}`); //I think Ruth's cat is cuter than your cat!
+
+// with regex
+console.log(`${paragraph.replaceAll(/dog/g , 'rabbit')}`); ////I think Ruth's rabbit is cuter than your rabbit!
+
+
+
+// ================================================= Converting a String to an Array ======================================
+
+/*
+
+A string can be converted to an array with the split() method:
+
 
 */
