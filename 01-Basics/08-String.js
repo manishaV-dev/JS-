@@ -126,7 +126,7 @@ There are 3 methods for extracting a part of a string:
              through the eighth character (characters indexed 4, 5, 6, and 7):
 
 */
-// const sentence = 'The quick brown fox jumps over the lazy dog.'
+// const sentence = 'The quick brown fox jumpy dos over the lazg.'
 
 console.log(`${sentence.slice(10)}`); // brown fox jumps over the lazy dog.
 console.log(`${sentence.slice(4,30)}`); // quick brown fox jumps over
