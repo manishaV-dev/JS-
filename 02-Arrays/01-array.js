@@ -35,6 +35,7 @@ console.log(a); // 5
 
 // Example of Shallow Copy -- (Composite data types — Objects and Arrays -- Store in Heap)
 
+// Object 
 const x = {
     en: 'Hello',
     de: 'Hallo',
@@ -47,6 +48,13 @@ const x = {
 
   console.log(y.pt); // oi
   console.log(x.pt); // oi
+
+// Array
+const arrA1 = [10,12,53]
+let arrB1 = arrA1;
+arrB1[0] = 50
+console.log(arrB1)
+console.log(arrA1)
 
   //In the example above, we actually made a shallow copy. This is often times problematic, since we expect the old variable
   // to have the original values, not the changed ones.
