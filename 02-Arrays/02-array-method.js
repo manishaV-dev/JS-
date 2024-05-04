@@ -21,7 +21,7 @@ const indieHero = ["Shaktiman", "Nagraj", "Krishh"]
 const anotherArr = new Array(2,3,4,5)
 console.log(anotherArr[2]); // 4
 
-// ========================================= Methods ============================
+// ========================================= Methods =====================================================================
 
 /*
         1. Push() - The push() method adds a new element to an array (at the end) and returns the new length of the array.
@@ -80,19 +80,42 @@ myArr.shift()
 console.log(myArr); // [1,2,3,4,5,20]
 
 /*
-       5. includes()
+       5. includes() : The includes() method of Array instances determines whether an array includes a 
+                            certain value among its entries, returning true or false as appropriate.
+
+                     This allows us to check if an element is present in an array (including NaN, unlike indexOf).
 
 */
 
 console.log(myArr.includes(10)); // false
 
 /*
-       6. indexOf()
+       6. indexOf() : The indexOf() method searches an array for an element value and returns its position.
+
+
+       syntax :      indexOf(searchElement)
+                     indexOf(searchElement, fromIndex)
+
+
+       lastIndexOf() : Array.lastIndexOf() is the same as Array.indexOf(), but returns the position of the 
+                            last occurrence of the specified element.
 
 */
-
+//let myArr = [1,2,3,4,5]
 console.log(myArr.indexOf(5)); // 4
 console.log(myArr.indexOf(10)); // -1 -- if element is not there then give -1.
+
+
+const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
+
+console.log(beasts.indexOf('bison')); // 1
+
+// Start from index 2
+console.log(beasts.indexOf('bison', 2)); // 4
+
+console.log("Last Index of", beasts.lastIndexOf('bison')); // 4
+
+
 
 
 /*
@@ -206,12 +229,37 @@ console.log(removed1); // []
 // // Original array is not modified
 // console.log(months); // ["Jan", "Mar", "Apr", "May"]
 
+/*
 
-
+// EXAMPLE OF SLICE, SPLICE, toSPLICED
 
 
 /*
+const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+const citrus = fruits.slice(1, 3);
 
+console.log(citrus); // ["Orange", "Lemon"];
+console.log(fruits); // // ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+
+
+const fruits1 = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+const spliceUse = fruits1.splice(1,3);
+
+console.log(spliceUse); // ["Orange", "Lemon", "Apple"];
+console.log(fruits1); // ["Banana", "Mango"];
+
+
+
+const fruits2 = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+const tospliceUse = fruits2.toSpliced(1,3);
+
+console.log(tospliceUse); // ["Banana", "Mango"]
+console.log(fruits2); //  ["Banana", "Orange", "Lemon", "Apple", "Mango"]
+
+*/
+
+
+/*
     10. Merging two arrays (Push, Concate, spread Operator)
 */
 
@@ -279,8 +327,14 @@ console.log(real_array); // [1,2,3,4,5,8,6,8,0,10]
 
 
 /*
-    12. Array.isArray
-        from()
+    12. Array.isArray : The Array.isArray() static method determines whether the passed value is an Array.
+
+
+        from() : The Array.from() static method creates a new, shallow-copied Array instance from an iterable or array-like object.
+
+
+        The Array.of() static method creates a new Array instance from a variable number of arguments, 
+        regardless of number or type of the arguments.
 
 */
 
@@ -298,27 +352,6 @@ let socre3 = 300;
 console.log(Array.of(score1,score2,socre3)); // [100,200,300]
 
 
+console.log(Array.of('foo', 2, 'bar', true)); // Array ["foo", 2, "bar", true]
 
-/*
-const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
-const citrus = fruits.slice(1, 3);
-
-console.log(citrus); // ["Orange", "Lemon"];
-console.log(fruits); // // ["Banana", "Orange", "Lemon", "Apple", "Mango"];
-
-
-const fruits1 = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
-const spliceUse = fruits1.splice(1,3);
-
-console.log(spliceUse); // ["Orange", "Lemon", "Apple"];
-console.log(fruits1); // ["Banana", "Mango"];
-
-
-
-const fruits2 = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
-const tospliceUse = fruits2.toSpliced(1,3);
-
-console.log(tospliceUse); // ["Banana", "Mango"]
-console.log(fruits2); //  ["Banana", "Orange", "Lemon", "Apple", "Mango"]
-
-*/
+console.log(Array.of()); // Array []
