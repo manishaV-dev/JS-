@@ -80,7 +80,7 @@ const tinderUser = {};
 tinderUser.id = '5697S'
 tinderUser.name = "John Doe"
 tinderUser.isLoggedIn = false;
-tinderUser.connection = ['Jimmy', 'Peter', 'Holy']
+// tinderUser.connection = ['Jimmy', 'Peter', 'Holy']
 
 console.log(tinderUser); //{id:'5697S', name: "John Doe", isLoggedIn: false, connction : ['Jimmy', 'Peter', 'Holy']}
 console.log(typeof tinderUser.connection); // object
@@ -121,3 +121,31 @@ const obj2 = {3:"c", 4:"d"}
 const spreadObj = {...obj1, ...obj2}
 console.log(spreadObj); // {1:"a", 2:"b", 3:"c", 4:"d" }
 console.log(obj1); // {1:"a", 2:"b"}
+
+
+const users = [
+    {
+        id: 1,
+        email : 'someone@gmail.com' ,
+    },
+    {
+        id: 2,
+        email: 'another@gpt.chat'
+    },
+    {
+        id: 3,
+        email: "newuser@yahoo.com"
+
+    }
+]
+
+console.log(users[1].email); // another@gpt.chat
+
+console.log(tinderUser);
+
+console.log(Object.keys(tinderUser)); // ['id', 'name', 'isLoggedIn']
+console.log(Object.values(tinderUser)); // ['5697S', 'John Doe', 'False']
+console.log(Object.keys(users[1])); // ['id', 'email']
+console.log(Object.entries(tinderUser)); //[ ['id', '5697S'], ['name', 'John Doe'], ['isLoggedIn', 'False']]
+
+console.log(tinderUser.hasOwnProperty('isLoggedIn')); // true
