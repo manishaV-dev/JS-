@@ -64,3 +64,60 @@ const loggedInUser2 = function(username = "Harry"){
 }
 
 console.log(loggedInUser2()); // // Welcome Back! Harry 😊
+
+
+//================================================ (Rest Operator)==============
+
+// without rest operator
+const calculateCartAmountNoRest = function(num1){
+    return num1
+}
+console.log(calculateCartAmountNoRest(200,3000,460)); // 200
+
+// with rest operator
+const calculateCartAmount = function(...num1){
+    return num1
+}
+console.log(calculateCartAmount(200,3000,460)); // [200, 3000, 460]
+
+const calculateCartAmountWithVal = function(val1, val2, ...num1){
+    console.log(val1,val2); // 200,350
+    return num1;
+
+}
+                                
+console.log(calculateCartAmountWithVal(200,350,500,700,460)); // [500,700,460]
+
+
+///////////////////////////////////////////////// =========================== ///////////////////////////////
+// object in function
+
+const users = {
+    username : "Manisha",
+    coursePrice : 999
+}
+
+
+const handleObject = function(anyObject){
+    console.log(`Name is ${anyObject.username} and course price is ${anyObject.coursePrice}`)
+}
+// handleObject(users); // Name is Manisha and course price is 999
+
+handleObject({
+    username: "Ramesh",
+    coursePrice: 599
+}) // Name is Ramesh and course price is 599
+
+
+
+///////////////////////////////////////////////// =========================== ///////////////////////////////
+// Array in function
+
+const newArray = [400,600,800,700]
+
+const returnSecond = function(otherArray){
+    return otherArray[2]
+}
+// console.log(returnSecond(newArray)); // 800
+console.log(returnSecond([100,200,300,400])); // 300
+
