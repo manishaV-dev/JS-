@@ -19,7 +19,6 @@ JavaScript has the following kinds of scopes:
 */
 
 var c = 50;
-
 if(true){
     let a = 5;
     const b = 6;
@@ -43,12 +42,24 @@ function exampleFunction() {
   
 
   let num1 = 200 // global scope
-
   if(true){
     let num1 = 10;
     const y = 100;
-
     console.log("Inner num1 - ", num1); // 10 -- block scope
   }
-
   console.log(num1); // 200
+
+
+  // =============================================================================================================
+
+
+  function one(){ // parent scope
+    const username = "Manisha"
+      function two(){ // child scope
+        const website = "Youtube"
+        console.log(username); // Manisha
+      }
+      two()
+      // console.log(website); // website is not define
+  }
+  one();
