@@ -80,4 +80,17 @@ const chai3 = () => {
     console.log(this); // {}
     console.log(this.ing); //  undefined
 }
-chai3()
+chai3();
+
+
+// ================================ Arrow Function ========================
+
+const addNum = (num1,num2) => {
+    return num1 + num2
+}
+console.log(addNum(5,8)); // 13
+
+
+// Implicit Return ==  without using {} and return keyword
+const subTwo = (num1 ,num2) => num1 - num2;
+console.log(subTwo(8,4)); // 4
