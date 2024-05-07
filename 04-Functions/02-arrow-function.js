@@ -20,6 +20,8 @@ console.log(addTwo(6)); // 8
 
 // this keyword -- refer the current context (scope)
 
+// this keyword in Object
+
 const user = {
     username : "Mohan",
     price : 999,
@@ -52,3 +54,30 @@ when you inspect in browser console.log(this), it returns window objects but her
 it retuns empty object {}
 
 */
+
+
+// this keyword in function
+
+// function chai(){
+//     let ing = "Milk"
+//     console.log(this); // window global object
+//     console.log(this.ing) // undefined
+// }
+// chai()
+
+
+// const chai2 = function(){
+//     let ing = "Suger"
+//     console.log(this); // window global object
+//     console.log(this.ing); //  undefined
+// }
+
+// chai2()
+
+
+const chai3 = () => {
+    let ing = "Suger"
+    console.log(this); // {}
+    console.log(this.ing); //  undefined
+}
+chai3()
