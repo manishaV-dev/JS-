@@ -63,3 +63,15 @@ function exampleFunction() {
       // console.log(website); // website is not define
   }
   one();
+
+
+  if(true){
+    const username = "Rohit"
+        if(username === "Rohit"){
+          const website = "Youtube"
+          console.log(`${username} is learning on ${website}`); // Rohit is working on Youtube
+        }
+        // console.log(website); Not working, because it is outside of its scope
+  }
+
+  // console.log(username); Not working, because it is outside of its scope
