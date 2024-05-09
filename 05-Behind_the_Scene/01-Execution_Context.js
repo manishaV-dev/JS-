@@ -102,3 +102,23 @@
     To do this, the JavaScript engine uses an event loop.
 
 */
+
+
+// for testing call stack, Go to console --> Source --> New Snippet --> Create JS file, e.g. test.js
+// then write the below code and add breakpoint to the function defination and where function is called.
+
+
+function one() {
+    console.log("One"); // add breakpoint
+}
+
+function two() {
+    console.log("two") // add breakpoint
+}
+
+function three() {
+    console.log("three") // add breakpoint
+} 
+one(); // add breakpoint
+two(); // add breakpoint
+three(); // add breakpoint
