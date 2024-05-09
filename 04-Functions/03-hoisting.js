@@ -13,6 +13,8 @@ In JavaScript, a variable can be used before it has been declared.
 
 --- Arrow functions are not hoisted. They must be defined before they are used.
 
+--- The JavaScript engine doesn’t hoist the function expressions and arrow functions.
+
 */
 
 
