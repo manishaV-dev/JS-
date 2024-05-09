@@ -23,6 +23,9 @@ if (-3.14)
 if (Infinity)
 if (-Infinity)
 
+    other truthy val ---    '  '(space in string), 
+                            function(){} - empty function, 
+
 
 The logical AND operator, &&
 
@@ -86,3 +89,61 @@ console.log(0 && "dog");
     In JavaScript, a nullish value is the value which is either null or undefined. Nullish values are always falsy.
 
 */
+
+
+// Check if an array is empty
+
+const userEmail = [];
+
+if(userEmail.length === 0){
+    console.log('Array is empty');
+}
+
+// Check if an object is empty
+
+const emptyobj = {};
+if(Object.keys(emptyobj).length === 0){ // here Object.keys() returns an array so we can use here an array method like length
+    console.log('Object is empty');
+}
+
+
+
+
+
+// ============================================ Nullish coalescing operator (??) ====================================
+
+/*  
+
+        The nullish coalescing (??) operator is a logical operator that returns its right-hand side operand when 
+        its left-hand side operand is null or undefined, and otherwise returns its left-hand side operand.
+
+
+        syntax --- leftExpr ?? rightExpr
+
+
+*/
+
+let userName = null;
+let text = "missing";
+let result = userName ?? text;
+console.log(result); // missing
+
+let val1 = 5;
+console.log(null ?? val1); // 5
+console.log(undefined ?? 20 ?? 60); // 20
+
+
+// =========================================== Conditional (Ternary) Operator ======================
+
+/*
+
+        The conditional operator assigns a value to a variable based on a condition.
+
+        syntax - (condition) ? true : false
+
+*/
+
+
+const teaPrice = 100;
+teaPrice >=80 ? console.log('Ice Tea'): console.log('Hot Tea'); // ice tea
+teaPrice <=80 ? console.log('Ice Tea'): console.log('Hot Tea'); // Hot Tea
