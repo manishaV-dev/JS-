@@ -1,14 +1,16 @@
 // function Declaration - can be Access before declaration
 
+
 console.log(addOne(4)); // 5
 function addOne(num){
     return ++num; // num + 1
 }
 console.log(addOne(5)); // 6
 
+//=================================================================================================
+
 
 // Function Expression -- only Access after Declaration
-
 
 // console.log(addTwo(6)); // 8 -- cannot access here, before initilization
 const addTwo = function(num){
@@ -94,3 +96,22 @@ console.log(addNum(5,8)); // 13
 // Implicit Return ==  without using {} and return keyword
 const subTwo = (num1 ,num2) => num1 - num2;
 console.log(subTwo(8,4)); // 4
+
+
+
+
+// ================================ IIFE (Immediately Invoked Function Expression) ========================
+
+
+/*
+
+NOTES : 
+
+        1. Declared functions are not executed immediately. They are "saved for later use", and will be executed later, 
+            when they are invoked (called upon).
+
+        
+        2. A JavaScript function can also be defined using an expression.
+           A function expression can be stored in a variable:
+
+*/
