@@ -53,3 +53,40 @@ NOTES :
 
 //By placing functions and variables inside an IIFE, you can avoid polluting them to the global object:
 
+(function() {
+    var counter = 0;
+    function add(a, b) {
+        return a + b;
+    }
+    console.log(add(10,20)); // 30
+}());
+
+
+/*
+
+        IIFE starting with a semicolon (;)
+
+        ;(function() {
+            //---
+        })();
+
+In this syntax, the semicolon is used to terminate the statement in case two or more JavaScript files
+are blindly concatenated into a single file.
+
+
+For example, you may have two file lib1.js and lib2.js which use IIFEs:
+
+(function(){
+    // ...
+})()
+
+
+(function(){
+    // ...
+})()
+
+
+If you use a code bundler tool to concatenate code from both files into a single file, 
+without the semicolon (;) the concatenated JavaScript code will cause a syntax error.
+
+*/
