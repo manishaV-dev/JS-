@@ -57,6 +57,30 @@ if(balance > 400) console.log('Short Hand Notation');
 
 const bankBalance = 500;
 
-// if(bankBalance < 300){
-//     console.log('less than 1000');
-// }else if(bankBalance )
+if(bankBalance < 300){
+    console.log('less than 1000');
+}else if(bankBalance < 450){
+    console.log('less than 450');
+}else{
+    console.log('more than 450');
+}
+
+/*
+    1. && - (and) -- both have to true
+
+    2. || - (OR) -- One have to true
+
+*/
+
+const isUserLoggedIn = true;
+const haveDabitCard = true;
+const isLoggedInFromGoogle = false;
+const isLoggedInFromEmail = true;
+
+if(isLoggedIn && haveDabitCard){
+    console.log('Yay! you can buy course'); 
+}
+
+if(isLoggedInFromGoogle || isLoggedInFromEmail){
+    console.log('You are logged in');
+}
