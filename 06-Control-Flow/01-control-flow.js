@@ -66,9 +66,13 @@ if(bankBalance < 300){
 }
 
 /*
+        Logical Operators
+
     1. && - (and) -- both have to true
 
     2. || - (OR) -- One have to true
+
+    3. ! - (NOT)
 
 */
 
