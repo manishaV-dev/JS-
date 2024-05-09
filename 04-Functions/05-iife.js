@@ -90,3 +90,27 @@ If you use a code bundler tool to concatenate code from both files into a single
 without the semicolon (;) the concatenated JavaScript code will cause a syntax error.
 
 */
+
+
+// Example: 
+
+(function dbConnect(){
+    // named iife
+    console.log('DB Connected')
+})();
+
+// 1st () -- Where we write the defination of function
+// 2nd () -- Execution of the Function
+
+
+// Example with arrow function
+
+(() => {
+    console.log('DB Connected two'); // DB Connected two
+})();
+
+// with parameter
+
+((name) => {
+    console.log(`DB ${name} Connected `); // DB Employee-List Connected
+})('Employee-List');
