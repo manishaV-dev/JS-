@@ -14,6 +14,8 @@ JavaScript has the following kinds of scopes:
 
     4. Block scope: The scope created with a pair of curly braces (a block).
 
+    -- The variables that you declare inside a function are local to the function. They are called local variables.
+
 
 
 */
@@ -75,3 +77,28 @@ function exampleFunction() {
   }
 
   // console.log(username); Not working, because it is outside of its scope
+
+
+
+
+  // ======================================== Global variable leaks: the weird part of JavaScript ==========
+
+
+  function getCounter() {
+    counter = 10;
+    return counter; // here, JavaScript engine creates the counter variable in the global scope.
+}
+
+console.log(getCounter()); // 10
+
+/*
+
+In this example, we assigned 10 to the counter variable without the var, let, or const keyword and then returned it.
+Outside the function, we called the getCounter() function and showed the result in the console.
+This issue is known as the leaks of the global variables.
+
+
+To fix this “weird” behavior, you use the 'use strict' at the top of the script or at the top of the function:
+
+
+*/
