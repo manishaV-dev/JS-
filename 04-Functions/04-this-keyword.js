@@ -57,6 +57,58 @@ function myFunction() {
 
 // In HTML event handlers, this refers to the HTML element that received the event:
 
-<button onclick="this.style.display='none'">
+{/* <button onclick="this.style.display='none'">
   Click to Remove Me!
-</button>
+</button> */}
+
+
+
+
+/*
+In regular functions the this keyword represented the object that called the function, which could be the window,
+the document, a button or whatever.
+
+With arrow functions the this keyword always represents the object that defined the arrow function.
+
+
+In arrow functions, JavaScript sets the 'this' lexically. This means that the arrow function doesn't create its own 
+'execution context' but inherits the this from the outer function where the arrow function is defined.
+
+
+In most cases, this means this will refer to the window object as well:
+
+*/
+
+//this means this will refer to the window object as well:
+const show = () => this
+console.log('arrow function this', show()); // {}
+
+/*
+
+if we try to implement an arrow function to it as an object method, we won't be able to access the object 
+through the this keyword:
+
+*/
+
+
+const personNew = {
+    name: 'Pedro',
+    surname: 'Sanchez',
+    // sayName: () => this.name + ' ' + this.surname
+    sayName: function(){
+        return (`${this.name} ${this.surname}`); // Pedro Sanchez
+    }
+}
+
+// undefined when use arrow function
+console.log(personNew.sayName()); // undefined undefined
+
+
+
+// ============================================  execution context  ============================================================
+
+
+// https://www.javascripttutorial.net/javascript-execution-context/
+
+
+// JavaScript is a single-threaded programming language. This means that the JavaScript engine has only one call stack. Therefore, it only can do one thing at a time.

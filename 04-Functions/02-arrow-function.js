@@ -55,6 +55,20 @@ console.log(this); // {}
 when you inspect in browser console.log(this), it returns window objects but here in runtime env like node, bun, dino etc 
 it retuns empty object {}
 
+
+In JavaScript, the this keyword refers to an object.
+
+The this keyword refers to different objects depending on how it is used:
+
+           i. In an object method, this refers to the object.
+           ii. Alone, this refers to the global object.
+           iii. In a function, this refers to the global object.
+           iv. In a function, in strict mode, this is undefined.
+           v. In an event, this refers to the element that received the event.
+           vi. Methods like call(), apply(), and bind() can refer this to any object.
+
+this is not a variable. It is a keyword. You cannot change the value of this.
+
 */
 
 
@@ -87,6 +101,32 @@ chai3();
 
 // ================================ Arrow Function ========================
 
+/*
+
+In regular functions the this keyword represented the object that called the function, which could be the window,
+the document, a button or whatever.
+
+With arrow functions the this keyword always represents the object that defined the arrow function.
+
+*/
+
+
+const withOutarrFun = function(){
+    return this;
+}
+console.log(withOutarrFun()); // Global objects
+
+const withArrFun = () => this;
+console.log(withArrFun()); {}
+
+
+const globalObject = this;
+const foo = () => this;
+console.log(foo() === globalObject); // true
+console.log(globalObject); {}
+console.log(foo()); {}
+
+
 const addNum = (num1,num2) => {
     return num1 + num2
 }
@@ -115,3 +155,7 @@ NOTES :
            A function expression can be stored in a variable:
 
 */
+
+
+
+
