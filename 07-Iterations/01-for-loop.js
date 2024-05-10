@@ -30,3 +30,26 @@
 
                     afterthought: is executed (every time) after the code block has been executed.
 */
+
+for (let index = 0; index < 10; index++) {
+    const element = index;
+    // console.log(element); // 0-9
+}
+
+for(let i = 0; i <= 10; i++){
+    const value = i;
+    if(value === 5){
+        // console.log('We are reached at 5');
+    }
+    // console.log(value); // 0-4 We are reached at 5 6-10
+}
+
+
+for(i = 0; i <= 5; i++){
+    console.log(`Outer Loop: ${i}`);
+    for(j = 0; j <= 5; j++){
+        // console.log(`Inner Loop: ${j} and Outer Loop: ${i}`);
+
+        console.log(`${i}*${j} =  ${i * j}`);
+    }
+}
