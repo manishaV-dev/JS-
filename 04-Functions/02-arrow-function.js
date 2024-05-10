@@ -170,11 +170,21 @@ console.log(subTwo(8,4)); // 4
                 const bob2 = (a) => a + 100;
 
         3. Cannot be used as methods
-
+                Arrow function expressions should only be used for non-method functions because they do not have their own this. 
 
 */
 
 
 
+const obj = {
+    i: 10,
+    b: () => console.log(this.i, this),
+    c() {
+      console.log(this.i, this);
+    },
+   
+  };
+obj.b(); //  undefined, Window (or the global object)
+obj.c(); // logs 10, Object
 
 
