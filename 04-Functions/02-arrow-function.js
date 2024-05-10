@@ -139,7 +139,40 @@ console.log(subTwo(8,4)); // 4
 
 
 
+/*
+    An arrow function expression is a compact alternative to a traditional function expression, with some semantic 
+    differences and deliberate limitations in usage:
 
+                -- Arrow functions don't have their own bindings to this, arguments, or super, and should not be used as methods.
+
+                -- Arrow functions cannot be used as constructors. Calling them with new throws a TypeError. 
+                    They also don't have access to the new.target keyword.
+
+                -- Arrow functions cannot use yield within their body and cannot be created as generator functions.    
+
+        Notes: 
+
+        1. Rest parameters, default parameters, and destructuring within params are supported, and always require parentheses:
+
+            example:    (a, b, ...r) => expression , Rest 
+                        (a = 400, b = 20, c) => expression, Default parameter
+                        ([a, b] = [10, 20]) => expression, Destructure
+                        ({ a, b } = { a: 10, b: 20 }) => expression
+
+        2. Arrow functions are always unnamed but You can also assign the arrow function to a variable so it has a name.
+
+            // Traditional Function
+                function bob(a) {
+                    return a + 100;
+                }
+
+            // Arrow Function
+                const bob2 = (a) => a + 100;
+
+        3. Cannot be used as methods
+
+
+*/
 
 
 
