@@ -45,11 +45,24 @@ for(let i = 0; i <= 10; i++){
 }
 
 
-for(i = 0; i <= 5; i++){
-    console.log(`Outer Loop: ${i}`);
-    for(j = 0; j <= 5; j++){
+for(i = 1; i <= 5; i++){
+    // console.log(`Outer Loop: ${i}`);
+    for(j = 1; j <= 5; j++){
         // console.log(`Inner Loop: ${j} and Outer Loop: ${i}`);
 
-        console.log(`${i}*${j} =  ${i * j}`);
+        // console.log(`${i}*${j} =  ${i * j}`);
     }
+}
+
+let table = 2;
+for (let i = 1; i <=10 ; i++) {
+    const result = `${table * i}`
+    // console.log(result);
+}
+
+let myArray = ['Superman', 'Batman', 'Flash']
+console.log(myArray.length); // 3
+for (let index = 0; index < myArray.length; index++) {
+    const element = myArray[index];
+    console.log(element);
 }
