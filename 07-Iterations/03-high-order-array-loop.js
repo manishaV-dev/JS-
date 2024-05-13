@@ -74,9 +74,22 @@ CountryCode.set("FR",  "France")
 // print key and value using destructure
 
 for(const [key,value] of CountryCode){
-    console.log(`${key} :- ${value}`);
+    // console.log(`${key} :- ${value}`);
     
 //     IN",  "India"
 //     "USA",  "United State of America"
 //     "FR",  "France"
 }
+
+
+// Object is not iterable from for-of loop
+
+const myObject = {
+    game1: "NFS",
+    game2: 'God of war',
+    game3: 'Witcher'
+}
+
+// for (const [key,value] of myObject) {
+//     console.log(`${key} : ${value}`); // myObject is not iterable
+// }
