@@ -24,18 +24,22 @@
     callbackFunction: The callback function is a function that is executed only once for each element and can accept 
                         the following arguments to be used within the callback function:
 
-        1. currentElement: The current element, as the name implies, is the element in the array that is
-                    being processed at the time the loop occurs. It is the only necessary argument.
+        1. currentElement: Required. The value of the current element.
 
-        2. index: index is an optional argument that carries the index of the currentElement.
+        2. index: Optional. The index of the current element.
 
-        3. array: The array is an optional argument that returns the array that was passed to the forEach() method.
+        3. array: Optional. The array of the current element.
 
         4. thisValue: This is an optional parameter that specifies the value that will be used in the callback function.
+                      Optional. Default undefined.
+                        A value passed to the function as its this value.
+                        
 
     In summary, the forEach() array iteration method accepts a callback function that holds arguments that can be used 
     within the callback function for each array item, such as the array item, the index of the item, and the entire array.
 
+
+    Return Value : UNDEFINED
 
 
 */
@@ -57,13 +61,22 @@ coding.forEach((item) => {
 const printVal = function(val){
     // console.log(val);
 }
-
 coding.forEach(printVal)
 
 
 coding.forEach( (val, index, arr) => {
     // console.log(val, index, arr); // javascript 0 ['JavaScript', 'Ruby', 'Java', 'Python', 'CPP'] and so on...
 })
+
+
+// Check the return value
+
+// const result = coding.forEach((item) => {
+//         console.log(item); // javascript .....
+//         return item
+// })
+// console.log(result); // Undefined
+
 
 
 const staffsDetails = [
@@ -131,7 +144,7 @@ staffsDetails.forEach(({name, salary}) => {
 
 
 myCoding.forEach(({langName, langFileName}) => {
-    console.log(`${langName} file name is ${langFileName}`);
+    // console.log(`${langName} file name is ${langFileName}`);
 })
 
 
