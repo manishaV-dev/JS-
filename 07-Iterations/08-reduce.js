@@ -99,3 +99,50 @@ console.log(myTotal); // 6
 // let tot = 0;
 // myNums.map((num) => tot += num)
 // console.log(tot); // 6
+
+
+
+///================================================================================================================
+
+const shoppingCart = [
+    {
+        courseName : 'Web Development Course',
+        coursePrice : 999
+    },
+    {
+        courseName : 'App Development Course',
+        coursePrice : 1999
+    },
+    {
+        courseName : 'Data Scientist',
+        coursePrice : 12999
+    },
+    {
+        courseName : 'Full Stack Development',
+        coursePrice : 5999
+    },
+
+]
+
+
+const priceToPay = shoppingCart.reduce((acc, items) => {
+        return acc + items.coursePrice;
+}, 0)
+
+console.log(priceToPay); // 21996
+
+
+
+// ------------------------------------ Using forEach loop ---------------------------------------------
+
+// let cartVal = 0;
+// shoppingCart.forEach(({coursePrice}) => {
+//         return cartVal += coursePrice
+// });
+// console.log(cartVal);
+
+// ------------------------------------ Using Map ---------------------------------------------
+// let pp = 0
+// // const cartprice = shoppingCart.map((price) => pp += price.coursePrice);
+// const cartprice = shoppingCart.map(({coursePrice}) => pp += coursePrice);
+// console.log(pp) // 21996
