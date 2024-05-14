@@ -71,10 +71,16 @@ const books = [
 const userBook = books.filter((book) => {
         return book.genre === 'History'
 });
-console.log(userBook);
+// console.log(userBook);
 
 // const userBook2 = books.filter(({published}) => {
 //     return published > 1980
 //   });
 //   console.log(userBook2);
 //   console.log(userBook2.length); //6
+
+
+let editionBk = books.filter((book) => {
+    return book.edition >= 2000 && book.genre === "History" 
+})
+console.log(editionBk);
