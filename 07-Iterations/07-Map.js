@@ -79,4 +79,11 @@ const persons = [
 
 // ===================================================== Chaining ===========================================
 
+let myNum = [1,2,3,4,5,6,7,8,9,10]
 
+let chainingNum = myNum
+                    .map((num) => num * 10) // here before num == [1, 2....], after this method  num == [10, 20....]
+                    .map((num) => num + 1) // here before num == [10, 20....], after this method  num == [11, 21....]
+                    .filter((num) => num >= 60)
+
+console.log(chainingNum); // [61, 71, 81, 91, 101]
