@@ -16,7 +16,20 @@
 <body class="bg-black">
     <div>
         <h1 id="title" class="heading">DOM Selector</h1>
+        <h2>Document Object Model in h2</h2>
+        <h3>Document Object Model in h3</h3>
+        <h4>Document Object Model in h4</h4>
+        <h5>Document Object Model in h5</h5>
+        <h6>Document Object Model in h6</h6>
+
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, necessitatibus?</p>
+
+        <ul>
+            <li>Lorem ipsum dolor</li>
+            <li>Lorem ipsum dolor</li>
+            <li>Lorem ipsum dolor</li>
+        </ul>
+
     </div>
 </body>
 
@@ -97,5 +110,50 @@
             It's worth noting that while innerHTML is powerful for manipulating content, it also opens up security vulnerabilities
             such as cross-site scripting (XSS) attacks if the input is not properly sanitized. 
             Therefore, it should be used with caution, especially when dealing with user-generated content.
+
+
+    7. querySelector :- 
+
+            document.querySelector('h2')
+            document.querySelector('.heading')
+            document.querySelector('#title')
+            document.querySelector('input[type="password"]')
+
+
+    `querySelector` and `querySelectorAll` are both methods in JavaScript used to select elements from the DOM 
+    (Document Object Model) based on a CSS selector. However, they have some key differences:
+
+    1. **querySelector:**
+                - Returns the first element that matches the specified CSS selector.
+                - If no elements match the selector, it returns `null`.
+                - Usage: `document.querySelector(selector)`.
+                - Example: `document.querySelector('.example-class')` will return the first element in the
+                     document with the class `example-class`.
+
+    2. **querySelectorAll:**
+                - Returns a static (non-live) `NodeList` containing all elements that match the specified CSS selector.
+                - If no elements match the selector, it returns an empty `NodeList`.
+                - Usage: `document.querySelectorAll(selector)`.
+                - Example: `document.querySelectorAll('.example-class')` will return all elements in the 
+                    document with the class `example-class`.
+
+    In summary, `querySelector` returns the first matching element, while `querySelectorAll` returns all matching elements
+    as a `NodeList`.
+
+    const myul = document.querySelector('ul');
+    const myli = document.querySelector('li')
+    myli.style.backgroundColor = "green"
+
+    const tempList = docuement.querySelectorAll('li')
+    tempList[0].style.color = 'green'
+
+    // Add color on all li
+    tempList.forEach((item) => {
+        item.style.color = 'green'
+    })
+ 
+
+
+
 
  -->
