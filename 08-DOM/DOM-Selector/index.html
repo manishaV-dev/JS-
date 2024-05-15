@@ -1,14 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM Selector</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
 </head>
-<body>
-    <div class="container">
-        <h1 class="heading">DOM Selector</h1>
+
+<body class="bg-black">
+    <div>
+        <h1 id="title" class="heading">DOM Selector</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, necessitatibus?</p>
     </div>
 </body>
+
 </html>
+
+<!-- 
+    In Console:
+
+    1. Finding HTML Elements: 
+            document.getElementById('title')
+        
+    document.getElementById('title').id --- 'title'
+    document.getElementById('title').className --- 'heading'
+
+    2. get attribute of an element
+            document.getElementById('title').getAttribute('id') --- 'title'
+            document.getElementById('title')getAttribute('class') --- 'heading'
+
+    3. Set attribute on an element (its overwrite the privious attr)
+            document.getElementById('title').setAttribute('class', 'test') --- heading - test
+            document.getElementById('title').setAttribute('class', 'test heading') --- heading - test heading
+
+    4. store it in a variable
+            const title = document.getElementById('id');
+            title 
+                <h1 id="title" class="test heading">DOM Selector</h1>
+
+    5.  Add style to an element
+            title.style.backgroundColor = '#000'
+            title.style.padding = '10px'
+
+    6. Find text of a Element
+            title.textContent; -- 'DOM Selector'
+            title.innerHTML; -- 'DOM Selector'
+            title.innerText; -- 'DOM Selector'
+
+        Diffrence Between innerText and textContent and innerHTML: 
+        <h1 id="title" class="heading">DOM Selector <span style="display:none;"> Test text . </span></h1>
+
+        title.innerText; -- 'DOM Selector'
+        title.textContent; -- 'DOM Selector test text'
+        title.innerHTML; -- 'DOM Selector <span style="display:none;"> Test text . </span>'
+
+        1. innerText:
+                -- innerText retrieves or sets the text content of the specified element, and all its descendants, 
+                    excluding <script> and <style> elements.
+
+                -- It returns the visible text content as rendered on the page, so it takes into account CSS styling 
+                    and may not include text that is hidden by CSS.
+
+                -- When setting innerText, it removes any existing child nodes within the element and replaces them with
+                    the provided text.
+
+        2. textContent:
+                -- textContent retrieves or sets the text content of the specified element, and all its descendants,
+                    including <script> and <style> elements.
+
+                -- Unlike innerText, textContent returns all text content within an element, including text that 
+                    may be hidden with CSS.
+
+                -- When setting textContent, it replaces the content of the element and all its descendants with the 
+                    provided text, similar to innerText.
+
+        3. innerHTML:
+                -- innerHTML retrieves or sets the HTML content of the specified element.
+
+                -- It returns the HTML markup inside the element, including any child elements and their attributes.
+
+                -- When setting innerHTML, it parses the provided string as HTML and inserts it into the element, 
+                    replacing any existing content.
+
+    In summary:
+    
+            innerText and textContent deal with text content only, with innerText being aware of CSS styling while textContent is not.
+
+            innerHTML deals with HTML content, allowing manipulation of HTML structure within an element.
+
+            It's worth noting that while innerHTML is powerful for manipulating content, it also opens up security vulnerabilities
+            such as cross-site scripting (XSS) attacks if the input is not properly sanitized. 
+            Therefore, it should be used with caution, especially when dealing with user-generated content.
+
+ -->
