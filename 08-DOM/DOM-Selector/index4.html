@@ -23,6 +23,29 @@ function addLanguage(langName, langColor) {
 addLanguage('Python', 'Orange')
 addLanguage('React', 'Green')
 
+
+// More optimized way to do this
+function addOptiLang(langName){
+    const li = document.createElement('li');
+    li.appendChild(document.createTextNode(langName));
+    document.querySelector('.language').appendChild(li);
+}
+addOptiLang('Golang')
+
+// Edit
+const secLang = document.querySelector('li:nth-child(2)');
+secLang.textContent = "Bun"
+// secLang.appendChild(document.createTextNode('Bun')); // pythonBun
+
+// Replace
+const newLi = document.createElement('li')
+newLi.appendChild(document.createTextNode('Dino'))
+secLang.replaceWith(newLi); // Dino
+
+
+
+
+
 </script>
 
 </html>
