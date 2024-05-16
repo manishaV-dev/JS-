@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating New HTML Elements (Nodes)</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+        const createDiv = document.createElement('div');
+        console.log(createDiv); // <div></div>
+
+        createDiv.className = 'container';
+        createDiv.id = Math.round(Math.random() * 10 + 1);
+
+        createDiv.setAttribute("title", "Example");
+        createDiv.style.backgroundColor = "Orange"
+        createDiv.style.padding = "15px"
+        createDiv.style.color = "#fff"
+        // Add text --1
+        // createDiv.innerText = "Create New HTML Element (Nodes)"
+
+         // Add text -- 2
+         const addText = document.createTextNode("Create New HTML Element (Nodes)");
+         createDiv.appendChild(addText)
+
+         // add element to body
+         document.body.appendChild(createDiv)
+
+
+</script>
+
+</html>
