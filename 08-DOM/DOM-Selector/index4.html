@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit and Remove Element</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+
+<script>
+
+function addLanguage(langName, langColor) {
+    const listItem = document.createElement('li');
+    listItem.innerText = `${langName}`;
+    listItem.style.color = `${langColor}`
+    document.querySelector('.language').appendChild(listItem)
+    
+}
+addLanguage('Python', 'Orange')
+addLanguage('React', 'Green')
+
+</script>
+
+</html>
