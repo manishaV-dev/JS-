@@ -152,7 +152,13 @@
         item.style.color = 'green'
     })
  
+    8. Convert HTMLCollection to an array
 
+    const itemList = document.querySelector('.item-list')
+    const conArray = Array.from(itemList);
+    conArray.forEach((li) => {
+        li.style.color = "Orange"
+    })
 
 
 
