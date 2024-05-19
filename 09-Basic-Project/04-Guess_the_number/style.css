@@ -34,15 +34,15 @@ main {
 }
 
 .left {
-  width: 52rem;
+  width: 25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .right {
-  width: 52rem;
-  font-size: 2rem;
+  width: 75rem;
+  font-size: 1.5rem;
 }
 
 /* ELEMENTS STYLE */
