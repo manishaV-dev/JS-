@@ -18,11 +18,11 @@ Common HTML Events
 
             Event	        Description
         1   onchange	    An HTML element has been changed
-        2   onclick	        The user clicks an HTML element
+        2   onclick	    The user clicks an HTML element
         3   onmouseover	    The user moves the mouse over an HTML element
         4   onmouseout	    The user moves the mouse away from an HTML element
         5   onkeydown	    The user pushes a keyboard key
-        6   onload	        The browser has finished loading the page
+        6   onload	    The browser has finished loading the page
         and many more
 
 
@@ -32,6 +32,7 @@ Assign Events Using the HTML DOM
                     <script>
                             document.getElementById("myBtn").onclick = displayDate;
                     </script>
+                    
     In the example above, a function named displayDate is assigned to an HTML element with the id="myBtn".
     The function will be executed when the button is clicked.
 
@@ -288,7 +289,7 @@ Here's a simple example of adding an event listener to a button:
 
 */
 
-
+//=================================================================================================================================
 
 /*
 
