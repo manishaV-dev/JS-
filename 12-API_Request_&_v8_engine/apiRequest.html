@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XMLHttp Request</title>
+    <style>
+
+
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+        
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+        
+        body {
+          background-color: #f9fafb;
+          font-family: "Poppins", sans-serif;
+        }
+        
+        
+        .container {
+            width: 100%;
+            max-width: 900px;
+            border-radius: 13px;
+            margin: 60px auto 0;
+            padding: 20px 35px 25px;
+            text-align: center;
+            background-color: #212121;
+            color: #fff;
+          }
+          
+        </style>
+</head>
+<body>
+    
+    <div class="container">
+
+        <table>
+            <tr>
+              <th>Value</th>
+              <th>State</th>
+              <th>Description</th>
+            </tr>
+
+            <tr>
+              <td>0</td>
+              <td>UNSENT</td>
+              <td>Client has been created. open() not called yet.</td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>OPENED	</td>
+                <td>open() has been called.	</td>
+            </tr>
+
+
+            <tr>
+                <td>2</td>
+                <td>HEADERS_RECEIVED	</td>
+                <td>send() has been called, and headers and status are available.	</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>LOADING	</td>
+                <td>Downloading; responseText holds partial data.	</td>
+            </tr>
+            	
+            <tr>
+                <td>4</td>
+                <td>DONE	</td>
+                <td>The operation is complete.</td>
+            </tr>
+
+          </table>
+      
+        		
+       
+    </div>
+
+
+    <script>
+        const requestURL = 'https://api.github.com/users/manishaV-dev'
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', requestURL);
+        console.log(xhr.readyState); // 1
+        // for track the state of request
+        xhr.onreadystatechange = function(){
+            console.log(xhr.readyState); // 2 3 4
+            if(xhr.readyState === 4){
+                // console.log(this.responseText); // {"login": "manishaV-dev", .... }
+               
+                // const data = this.responseText;
+                // console.log(typeof data); // string
+
+                // to change string to json
+                const data = JSON.parse(this.responseText)
+                console.log(typeof data); // object
+
+                console.log(data.id); // 85889392
+                console.log(data.name); // manisha varma
+                console.log(data.company); // DTH LMS Solution Infotech
+                console.log(data.following); // 4
+
+            }
+        }
+        xhr.send();
+
+    </script>
+
+
+</body>
+</html>
