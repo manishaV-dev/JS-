@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async JS</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f9fafb;
+            font-family: "Poppins", sans-serif;
+        }
+
+
+        .container {
+            width: 60%;
+            max-width: 600px;
+            border-radius: 13px;
+            margin: 60px auto 0;
+            background-color: #dedede;
+            padding: 20px 35px 25px;
+            text-align: center;
+        }
+
+        .button-box {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 35px;
+        }
+
+        .btn {
+            outline: none;
+            border: none;
+            padding: 5px 40px;
+            border-radius: 30px;
+            background-color: #0073f6;
+            color: #fff;
+            font-size: 25px;
+            box-shadow: 0 0 10px #dedede;
+            cursor: pointer;
+            margin-top: 30px;
+            margin-bottom: 35px;
+        }
+
+        .btn:hover {
+            background-color: #003ef6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3>asynchronous JS</h3>
+        <button class="btn" id="stop">stop</button>
+    </div>
+
+    <script>
+
+    // function declaration
+        // setTimeout(function(){
+        //     console.log("Hello world!");
+        // },3000)
+
+    // Arrow Function
+    //    setTimeout(() => {
+    //     console.log("Hello world!");
+    //    },3000)
+
+    // function expression
+    // const sayHello = function(){
+    //     console.log("Hello world");
+    // }
+    // setTimeout(sayHello, 3000)
+
+
+
+    // const changeText = function(){
+    //     document.querySelector('h3').textContent = 'Asynchoronous Javascript Course'
+    // }
+    // setTimeout(changeText, 2000)
+
+
+    // clear timeout
+    // const changeText = function(){
+    //     document.querySelector('h3').textContent = 'Asynchoronous Javascript Course'
+    // }
+    // const setTime = setTimeout(changeText, 2000)
+    // clearTimeout(setTime)
+
+    // example using event
+
+    const stopBtn = document.querySelector('#stop');
+    const changeText = function(){
+        document.querySelector('h3').textContent = 'Asynchoronous Javascript Course'
+    }
+    const setTime = setTimeout(changeText, 2000);
+    stopBtn.addEventListener('click', () =>{
+        clearTimeout(setTime);
+        console.log("Stopped");
+    })
+
+    </script>
+</body>
+
+</html>
