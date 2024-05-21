@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async JS</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f9fafb;
+            font-family: "Poppins", sans-serif;
+        }
+
+
+        .container {
+            width: 60%;
+            max-width: 600px;
+            border-radius: 13px;
+            margin: 60px auto 0;
+            background-color: #dedede;
+            padding: 20px 35px 25px;
+            text-align: center;
+        }
+
+        .button-box {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 35px;
+        }
+
+        .btn {
+            outline: none;
+            border: none;
+            padding: 5px 40px;
+            border-radius: 30px;
+            font-size: 22px;
+            color: #fff;
+            cursor: pointer;
+            margin-top: 30px;
+            margin-bottom: 35px;
+        }
+        .red{
+            background-color: #bc0042;
+        }
+
+        .green {
+            background-color: #007910;
+        }
+
+        .btn:hover{
+            box-shadow: 0 0 10px #232323;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3>asynchronous JS</h3>
+        <button class="btn green" id="start">Start</button>
+        <button class="btn red" id="stop">Stop</button>
+    </div>
+
+    <script>
+
+        //------------------------------------  setInterval with 3 parameter exmple  ----------------------------------------
+        // const sayDate = function(str){
+        //     console.log(str, Date.now())
+        // }
+        // setInterval(sayDate, 1000, "Hii"); // Hii 1716281006410
+
+
+        // --------------------------- clear setInterval ---------------
+
+        // const sayDate = function(str){
+        //     console.log(str, Date.now())
+        // }
+        // const setInterval = setInterval(sayDate, 1000, "Hii");
+        // clearInterval(setInterval)
+
+//------------------------------------------------------ Mini Assignment ------------------------------------------------------
+
+        const startBtn = document.querySelector('#start');
+        const stopBtn = document.querySelector('#stop');
+
+        //A variable intervalId is declared outside the event listeners to store the ID of the interval created by setInterval.
+        let intervalId;
+
+        startBtn.addEventListener('click', function(){
+              // Only start a new interval if one isn't already running
+              // if intervalId is null (i.e., no interval is currently running).
+            if(!intervalId){
+                intervalId = setInterval(function(){
+                    console.log('Start Printing', Date.now())
+                }, 1000)
+            }
+        });
+
+        stopBtn.addEventListener('click', function(){
+             // Clear the interval if it's running
+            if(intervalId){
+                clearInterval(intervalId);
+                intervalId = null; // // Reset the interval ID
+            }
+        })
+
+        //This ensures that only one interval runs at a time and that clicking the "Stop" button stops the interval from logging to the console.
+
+        
+ 
+
+
+
+    </script>
+</body>
+
+</html>
