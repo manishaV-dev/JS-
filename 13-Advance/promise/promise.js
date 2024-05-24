@@ -112,3 +112,40 @@ consumePromiseFive()
 
 //  if error = true : ERROR: JS
 //  if error = false : {course: 'Javascript', price: 999}
+
+
+//===============================================================================================================================
+
+
+// Fetch -- try catch
+
+// async function getUser(){
+//     try {
+//         const response = await fetch('https://jsonplaceholder.typicode.com/users');
+//         const data = response.json();
+//         console.log(data);
+//     } catch (error) {
+//         console.log("Error :", error);
+//     }
+// }
+
+// getUser();
+
+// const data = response.json();  -- In console : promise (pending)
+// const data = await response.json(); -- In console : (10) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}
+
+
+//===============================================================================================================================
+
+// fetch --- then-catch
+
+fetch('https://jsonplaceholder.typicode.com/users')
+.then((response) => {
+    return response.json();
+})
+.then((data) => {
+    console.log(data); // (10) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+})
+.catch((error) => {
+    console.log("ERROR:" , error);
+})
