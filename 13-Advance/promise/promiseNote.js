@@ -41,3 +41,38 @@ This becomes very useful when you want to run a series of asynchronous operation
 
 
 */
+
+
+// Practice
+
+const promiseCreate = new Promise((resolve, reject) => {
+    let error = true;
+    if(!error){
+        resolve({course: "JS", topic: "Promise"})
+    }else{
+        reject("Course Not found")
+    }
+})
+
+// promiseCreate.then((courseTopic) => {
+//     return courseTopic.topic
+// }).then((topic) => {
+//     console.log(topic);
+// }).catch((err) => {
+//     console.log(err);
+// }).finally(() => console.log("Always Run"))
+
+
+//------------or
+
+async function consumePromise(){
+try {
+   const response = await promiseCreate;
+   console.log(response);
+} catch (error) {
+    console.log(error);
+}
+}
+consumePromise();
+
+
