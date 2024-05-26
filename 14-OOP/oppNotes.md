@@ -68,21 +68,36 @@ OOP in JavaScript provides a structured and efficient way to manage code complex
 
 Object-Oriented Programming (OOP) is a popular programming paradigm used in JavaScript for several reasons, even though JavaScript is a multi-paradigm language that also supports functional and procedural programming. Here are some key reasons to use OOP in JavaScript:
 
-      1. Encapsulation: OOP allows you to bundle data (attributes) and methods (functions) that operate on the data into objects. This encapsulation helps protect the internal state of an object and only exposes a public interface, which makes code more modular and easier to maintain.
+      1. Encapsulation: OOP allows you to bundle data (attributes) and methods (functions) 
+      that operate on the data into objects. This encapsulation helps protect the internal 
+      state of an object and only exposes a public interface, which makes code more modular 
+      and easier to maintain.
 
-      2. Reusability: By using classes and objects, you can create reusable code components. Inheritance allows new classes to extend existing ones, promoting code reuse and reducing redundancy.
+      2. Reusability: By using classes and objects, you can create reusable code components.
+      Inheritance allows new classes to extend existing ones, promoting code reuse and reducing redundancy.
 
-      3. Modularity: OOP promotes modularity by breaking down complex problems into smaller, manageable objects. Each object represents a distinct part of the application with a specific responsibility, which makes the overall system easier to understand and modify.
+      3. Modularity: OOP promotes modularity by breaking down complex problems into smaller, manageable objects.
+      Each object represents a distinct part of the application with a specific responsibility, which makes 
+      the overall system easier to understand and modify.
 
-      4. Abstraction: OOP enables you to abstract complex real-world problems by modeling them with objects. This abstraction helps in managing complexity by focusing on high-level operations and interactions between objects, rather than low-level implementation details.
+      4. Abstraction: OOP enables you to abstract complex real-world problems by modeling them with objects. 
+      This abstraction helps in managing complexity by focusing on high-level operations and interactions 
+      between objects, rather than low-level implementation details.
 
-      5. Inheritance: OOP allows you to create a hierarchy of classes that inherit properties and methods from parent classes. This inheritance mechanism promotes code reuse and can simplify the creation of new functionality by leveraging existing code.
+      5. Inheritance: OOP allows you to create a hierarchy of classes that inherit properties and methods from 
+      parent classes. This inheritance mechanism promotes code reuse and can simplify the creation of new 
+      functionality by leveraging existing code.
 
-      6. Polymorphism: Polymorphism enables objects to be treated as instances of their parent class rather than their actual class. This allows for flexibility and the ability to use a single interface to represent different underlying forms (data types).
+      6. Polymorphism: Polymorphism enables objects to be treated as instances of their parent class rather than 
+      their actual class. This allows for flexibility and the ability to use a single interface to represent 
+      different underlying forms (data types).
 
-      7. Design Patterns: OOP is the foundation for many design patterns, such as Singleton, Factory, Observer, and Strategy. These patterns provide proven solutions to common problems and can make your code more robust and maintainable.
+      7. Design Patterns: OOP is the foundation for many design patterns, such as Singleton, Factory, Observer, and 
+      Strategy. These patterns provide proven solutions to common problems and can make your code more robust and maintainable.
 
-      8. Improved Code Maintainability: OOP structures your code in a way that makes it easier to manage, understand, and modify. Changes in one part of the application are less likely to impact unrelated parts, reducing the risk of introducing bugs.
+      8. Improved Code Maintainability: OOP structures your code in a way that makes it easier to manage, understand, 
+      and modify. Changes in one part of the application are less likely to impact unrelated parts, reducing the 
+      risk of introducing bugs.
 
 
 
