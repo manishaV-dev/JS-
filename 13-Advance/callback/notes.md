@@ -33,18 +33,18 @@ Why use Callback functions?  ----- ----- ----- ----- ----- -----  ----- ----- --
 Most of the time we are creating programs and applications that operate in a synchronous manner. In other words, some of our operations are started only after the preceding ones have completed. Often when we request data from other sources, such as an external API, we don’t always know when our data will be served back. In these instances we want to wait for the response, but we don’t always want our entire application grinding to a halt while our data is being fetched. These situations are where callback functions come in handy.
 
 
-function serverRequest(query, callback){
-        setTimeout(function(){
-        let response = query + "full!";
-        callback(response);
-        },5000);
-    }
+            function serverRequest(query, callback){
+                    setTimeout(function(){
+                    let response = query + "full!";
+                    callback(response);
+                    },5000);
+                }
 
-function getResults(results){
-  console.log("Response from the server: " + results);
-}
+            function getResults(results){
+            console.log("Response from the server: " + results);
+            }
 
-serverRequest("The glass is half ", getResults);
+            serverRequest("The glass is half ", getResults);
 
 // Result in console after 5 second delay:
 // Response from the server: The glass is half full!
@@ -68,16 +68,16 @@ Asynchronous programming makes your JavaScript programs run faster, and you can 
 A callback is a function used as an argument in another function. Callbacks allow you to create asynchronous programs in JavaScript by passing the result of a function into another function.
 
 
-<!-- function greet(name) {
-    console.log(`Hi ${name}, how do you do?`);
-}
+                function greet(name) {
+                    console.log(`Hi ${name}, how do you do?`);
+                }
 
-function displayGreeting(callback) {
-    let name = prompt("Please enter your name");
-    callback(name);
-};
+                function displayGreeting(callback) {
+                    let name = prompt("Please enter your name");
+                    callback(name);
+                };
 
-displayGreeting(greet); -->
+                displayGreeting(greet);
 
 ==========================================================================================================================
 
@@ -87,32 +87,32 @@ Although callbacks make it easy to control and make your program asynchronous, y
 This problem arises when you perform multiple asynchronous tasks with callbacks, which might result in nesting callbacks in callbacks.
 
 
-function greet(callback) {
-    setTimeout(function() {
-        console.log("Hi Musab");
-        callback();
-    }, 1000);
-}
+                    function greet(callback) {
+                        setTimeout(function() {
+                            console.log("Hi Musab");
+                            callback();
+                        }, 1000);
+                    }
 
-function introduce(callback) {
-    setTimeout(function() {
-        console.log("I am your academic advisor");
-        callback();
-    }, 1000);
-}
+                    function introduce(callback) {
+                        setTimeout(function() {
+                            console.log("I am your academic advisor");
+                            callback();
+                        }, 1000);
+                    }
 
-function question(callback) {
-    setTimeout(function() {
-        console.log("Are you currently facing any challenge in your academics");;
-        callback();
-    }, 1000);
-}
+                    function question(callback) {
+                        setTimeout(function() {
+                            console.log("Are you currently facing any challenge in your academics");;
+                            callback();
+                        }, 1000);
+                    }
 
-// callback hell
-greet(function() {
-    introduce(function() {
-        question(function() {
-            console.log("Done");
-        });
-    });
-});
+                    // callback hell
+                    greet(function() {
+                        introduce(function() {
+                            question(function() {
+                                console.log("Done");
+                            });
+                        });
+                    });
