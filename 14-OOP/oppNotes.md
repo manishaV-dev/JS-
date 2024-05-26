@@ -4,7 +4,7 @@ Ans - Yes, JavaScript has classes. Introduced in ECMAScript 6 (ES6) in 2015. How
 he class syntax in JavaScript provides a way to create objects and handle inheritance in a more structured and clear manner compared to the earlier prototype-based approach.
 
 
-class Person {
+<!-- class Person {
   constructor(name, age) {
     this.name = name;
     this.age = age;
@@ -17,7 +17,7 @@ class Person {
 
 // Creating an instance of the class
 const person1 = new Person('Alice', 30);
-person1.greet(); // Output: Hello, my name is Alice and I am 30 years old.
+person1.greet(); // Output: Hello, my name is Alice and I am 30 years old. -->
 
 
     Key Features of JavaScript Classes : 
@@ -26,7 +26,7 @@ person1.greet(); // Output: Hello, my name is Alice and I am 30 years old.
             iii. Inheritance: Classes can inherit from other classes using the extends keyword.
 
 
-class Animal {
+<!-- class Animal {
   constructor(name) {
     this.name = name;
   }
@@ -48,7 +48,7 @@ class Dog extends Animal {
 }
 
 const dog1 = new Dog('Rex', 'Labrador');
-dog1.speak(); // Output: Rex barks.
+dog1.speak(); // Output: Rex barks. -->
 
 explanation :- In this example, the 'Dog' class extends the 'Animal' class, inheriting its properties and methods. The 'speak' method in the 'Dog' class 
                 overrides the 'speak' method in the 'Animal' class.
