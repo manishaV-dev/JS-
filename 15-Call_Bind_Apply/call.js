@@ -83,3 +83,114 @@ let obj = {
 
 sleep.call(obj)
 // output : I, typically sleep between, 6 and 8 hours
+
+
+
+//===============================================================================================================================
+//===============================================================================================================================
+//===============================================================================================================================
+
+
+/*
+
+    Method Reuse
+    With the call() method, you can write a method that can be used on different objects.
+
+
+    All Functions are Methods
+    In JavaScript all functions are object methods.
+    If a function is not a method of a JavaScript object, it is a function of the global object 
+
+
+    The call() method is a predefined JavaScript method.
+    It can be used to invoke (call) a method with an owner object as an argument (parameter).
+
+    With call(), an object can use a method belonging to another object.
+
+
+*/
+
+
+const newPerson = {
+    fullName: function() {
+      return this.firstName + " " + this.lastName;
+    }
+  }
+
+  const person1 = {
+    firstName:"John",
+    lastName: "Doe"
+  }
+  
+  const person2 = {
+    firstName:"Mary",
+    lastName: "Doe"
+  }
+
+  // This will return "John Doe":
+  console.log(newPerson.fullName.call(person2));
+
+
+  /*
+
+    The call() Method with Arguments
+    The call() method can accept arguments:
+
+
+  */
+
+
+    const admin = {
+        fullName: function(city, country) {
+        return (`${this.firstName} ${this.lastName} lives in ${city}, ${country}.`)
+        }
+      }
+      
+      const admin1 = {
+        firstName:"John",
+        lastName: "Doe"
+      }
+      
+    console.log(admin.fullName.call(admin1, "Oslo", "Norway")); // John Doe lives in Oslo, Norway.
+
+
+    // console.log(admin.fullName.bind(admin1, "Oslo", "Norway")); // GET ERROR
+
+
+    /*
+
+        The issue you're encountering is due to the way the bind method works in JavaScript compared to call.
+
+            The call method immediately invokes the function with the given this context and arguments.
+            The bind method, on the other hand, returns a new function with the given this context, but
+            does not invoke it immediately.
+            
+            Here's a detailed explanation with your example:
+
+            ---------- Using call:
+
+            console.log(admin.fullName.call(admin1, "Oslo", "Norway")); // John Doe lives in Oslo, Norway.
+
+            call is used to invoke admin.fullName immediately with admin1 as the this context and "Oslo", "Norway" as the arguments.
+
+            ---------- Using bind:
+
+            const boundFullName = admin.fullName.bind(admin1);
+            console.log(boundFullName("Oslo", "Norway")); // John Doe lives in Oslo, Norway.
+
+            bind creates a new function (boundFullName) with this set to admin1, but it does not call it.
+            You need to call boundFullName with the appropriate arguments ("Oslo", "Norway") to get the desired output.
+            So, to fix your code, you need to actually call the function returned by bind with the required arguments:
+
+
+            const boundFullName = admin.fullName.bind(admin1);
+            console.log(boundFullName("Oslo", "Norway")); // John Doe lives in Oslo, Norway.
+
+            In summary, bind returns a new function that you need to call with arguments, whereas call invokes the function
+            immediately with the specified this context and arguments.
+
+    */
+
+
+    const boundFullName = admin.fullName.bind(admin1);
+    console.log(boundFullName("Oslo", "Norway"));  // John Doe lives in Oslo, Norway.
