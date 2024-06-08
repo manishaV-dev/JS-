@@ -1,0 +1,22 @@
+##Packed Array
+A packed array is a type of array where each element is stored contiguously in memory. This means there are no gaps or "holes" between the elements. 
+Every index in the array directly corresponds to an element, and the memory usage is as efficient as possible given the size of the elements and the array.
+
+##Advantages:
+      i. Memory Efficiency: No unused space between elements.
+      ii. Cache Performance: Better use of CPU cache lines due to contiguous memory, leading to faster access times.
+      iii. Predictable Performance: Access times are consistent and predictable because the memory layout is simple.
+
+##Disadvantages:
+      i. Fixed Size: The array size is often fixed at the time of allocation, making it less flexible.
+      ii.Resizing Overhead: If the array needs to grow, it often requires creating a new array and copying all elements, which can be expensive in 
+          terms of time and memory.
+
+##Use Cases:
+      i. Situations where the array size is known and remains constant.
+      ii. Performance-critical applications where predictable access times are crucial.
+      iii. Implementations requiring high memory efficiency.
+
+##Holey Array
+A holey array (also known as a sparse array) is an array that allows for gaps or "holes" where some indices might not have an element assigned. 
+In such arrays, not all indices between the first and the last are necessarily populated with values.
